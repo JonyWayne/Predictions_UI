@@ -5,7 +5,7 @@ import { StarryBackground } from 'shared/ui';
 import { TarotDeck } from 'entities/tarot/ui/TarotDeck';
 import { ReadingResult } from 'entities/tarot/ui/ReadingResult';
 
-export const HomePage = () => {
+export const HomePageAlternative = () => {
   const [fetchPrediction, { data, isLoading, isError }] = useLazyGetPredictionQuery();
 
   return (
