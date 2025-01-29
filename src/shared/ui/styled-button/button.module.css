@@ -1,0 +1,87 @@
+.StyledButton {
+  position: relative;
+  width: 180px; /* Увеличим ширину для текста */
+  height: 50px;
+  line-height: 50px; /* Выравниваем текст по центру */
+  background: #2c3e50; /* Темно-синий фон */
+  text-transform: uppercase;
+  font-size: 18px; /* Оптимальный размер шрифта */
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: 0.5s;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+  border: 1px solid #34495e; /* Граница в тон фона */
+  border-radius: 8px; /* Скруглим углы */
+  overflow: hidden; /* Чтобы градиент не выходил за пределы */
+  color: rgba(255, 255, 255, 0.8); /* Цвет текста */
+}
+
+.StyledButtonSpan {
+  position: absolute;
+  display: block;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  bottom: 1px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.3); /* Полупрозрачный черный фон */
+  color: rgba(255, 255, 255, 0.8); /* Цвет текста */
+  transition: 0.5s;
+  border-radius: 8px; /* Скруглим углы */
+  z-index: 2; /* Чтобы текст был поверх градиента */
+}
+
+.StyledButton:hover .StyledButtonSpan {
+  color: rgba(255, 255, 255, 1); /* Ярче при наведении */
+  background: rgba(0, 0, 0, 0.5); /* Темнее при наведении */
+}
+
+.StyledButtonSpan::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.1); /* Легкий эффект свечения */
+  z-index: 10;
+  border-radius: 8px; /* Скруглим углы */
+}
+
+.StyledButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    #8e44ad,
+    /* Фиолетовый */ #3498db,
+    /* Синий */ #1abc9c,
+    /* Бирюзовый */ #f1c40f,
+    /* Золотой */ #e67e22,
+    /* Оранжевый */ #e74c3c,
+    /* Красный */ #8e44ad /* Фиолетовый */
+  );
+  background-size: 400%;
+  opacity: 0.8; /* Полупрозрачный градиент */
+  transition: 2.5s;
+  animation: eff 10s linear infinite; /* Ускорим анимацию */
+  z-index: 1; /* Градиент под текстом */
+  border-radius: 8px; /* Скруглим углы */
+}
+
+@keyframes eff {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
